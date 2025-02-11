@@ -1,0 +1,60 @@
+@font-face{
+    font-family: TitilliumWeb;
+    src: url('../fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
+}
+
+:root{
+    --nav-item-padding: 20px;
+    --default-font-family: TitilliumWeb;
+
+    --gallery-row-gap:50px;
+    --gallery-default-col-gap:150px;
+    --gallery-two-col-gap:250px;
+}
+
+body{
+    font-family: var(--default-font-family, Helvetica);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: brown;
+    width: 100%;
+
+}
+
+nav li {
+    float:left;
+}
+
+nav li a {
+    display: block;
+    padding: var(--nav-item-padding, 20px);
+    background-color: aquamarine;
+}
+
+.gallery-container {
+    display: grid;
+    column-gap: var(--gallery-default-col-gap, 150px);
+    row-gap: var(--gallery-row-gap, 50px);
+    justify-content: center;
+}
+
+.two-col{
+    column-gap: var(--gallery-two-col-gap, 250px);
+    grid-template-columns: auto auto;
+}
+
+.three-col{
+    grid-template-columns: auto auto auto;
+}
+
+.game-entry{
+    width: 310px;
+}
+
+body {
+    background-color: antiquewhite;
+}
