@@ -1,55 +1,103 @@
 @font-face{
-    font-family: TitilliumWeb;
-    src: url('../fonts/Titillium_Web/TitilliumWeb-Regular.ttf');
+    font-family: Quicksand;
+    src: url('../fonts/Quicksand/Quicksand-Regular.ttf');
+}
+@font-face{
+    font-family: Montserrat;
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf');
+}
+@font-face{
+    font-family: MontserratBoldItalic;
+    src: url('../fonts/Montserrat/static/Montserrat-BoldItalic.ttf');
+}
+@font-face{
+    font-family: MontserratExtraBold;
+    src: url('../fonts/Montserrat/static/Montserrat-ExtraBold.ttf');
+}
+@font-face{
+    font-family: MontserratLight;
+    src: url('../fonts/Montserrat/static/Montserrat-Light.ttf');
 }
 
 :root{
-    --nav-item-padding: 20px;
-    --default-font-family: TitilliumWeb;
+    
+    --background-color: rgb(32, 32, 32);
+    --normal-font-color: rgb(238, 236, 207);
+    --shade-font-color: rgb(201, 209, 170);
+    --link-font-color: rgb(175, 232, 213);
+    --footer-background-color: rgb(99, 99, 99);
 
+    --paragraph-font-family: Quicksand;
+    --seg-title-font-family: MontserratBoldItalic;
+    --page-title-font-family: MontserratExtraBold;
+    --large-font-family: MontserratLight;
+
+    --nav-item-padding: 20px;
+
+    --latest-col-gap: 20px;
     --gallery-row-gap:50px;
     --gallery-default-col-gap:150px;
     --gallery-two-col-gap:250px;
+
+    --segment-margin-top:4%;
+
+    --page-title-font-size: 46px;
+    --seg-title-font-size: 36px;
+    --large-font-size: 32px;
+    --game-title-font-size:28px;
+    --paragraph-font-size: 24px;
+
+    --game-width-two: 500px;
+    --game-width-three: 340px;
+
+    --long-text-width: 60ch;
+    --medium-text-width: 45ch;
+
+    --default-gap:2%;
+
 }
 
 body{
-    font-family: var(--default-font-family, Helvetica);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--paragraph-font-family), Helvetica;
+    background-color: var(--background-color);
+    color: var(--normal-font-color)
 }
 
-.segmented{
-    display: grid;
-    grid-template-rows: auto auto auto auto auto;
+h1 {
+    font-size: var(--page-title-font-size);
+    font-family: var(--page-title-font-family), Helvetica;
 }
 
-.segment{
-    border-style: solid;
-    border-color: aqua;
+h2{
+    font-size: var(--seg-title-font-size);
+    font-style: italic;
+    font-family: var(--seg-title-font-family), Helvetica;
 }
 
-.introduction{
-    display: grid;
-    column-gap: 50px;
-    grid-template-columns: 300px auto;
-    grid-template-rows: 272px;
+h3{
+    font-size: var(--game-title-font-size);
 }
 
-.introduction > p{
-    align-self: center;
-    font-size: 32px;
+p {
+    font-size: var(--paragraph-font-size);
+}
+
+a {
+    color: var(--link-font-color);
 }
 
 nav {
-    width: 100%;
-    background-color: aquamarine;
+    display: flex;
+    background-color: var(--normal-font-color);
+    font-size: var(--paragraph-font-size);
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: brown;
-    width: 100%;
-
 }
 
 nav li {
@@ -58,34 +106,92 @@ nav li {
 
 nav li a {
     display: block;
-    padding: var(--nav-item-padding, 20px);
-    background-color: aquamarine;
+    padding: var(--nav-item-padding);
+    background-color: var(--normal-font-color);
+    color: var(--background-color);
+    text-decoration: none;
 }
 
 nav li a:hover {
-    background-color: rgb(104, 185, 158);
+    background-color: var(--background-color);
+    color: var(--normal-font-color);
+}
+
+footer{
+    margin-top: var(--segment-margin-top);
+    padding: var(--default-gap);
+    width: 100%;
+    background-color:var(--footer-background-color);
+    font-size: var(--paragraph-font-size);
+}
+footer a{
+    text-decoration: none;
+}
+
+.segment{
+    margin-left: var(--default-gap);
+    margin-right: var(--default-gap);
+    margin-top: var(--segment-margin-top);
+    -border-style: solid;
+    -border-color: aqua;
+}
+
+.latest{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 10% auto;
+    column-gap: var(--latest-col-gap);
+    grid-template-areas:
+    "title title"
+    "video date"
+    "video caption";
+}
+.latest > h2{
+    grid-area: title;
+}
+.latest .date{
+    grid-area: date;
+}
+.latest > iframe{
+    grid-area: video;
+}
+.latest > p{
+    grid-area: caption;
+    width: var(--medium-text-width);
+}
+
+.introduction{
+    display: flex;
+    margin: var(--default-gap);
+    gap: var(--default-gap);
+}
+.introduction > p{
+    font-family: var(--large-font-family),Helvetica;
+    align-self: center;
+    font-size: var(--large-font-size);
+    width: var(--long-text-width);
 }
 
 .gallery-container {
     display: grid;
-    column-gap: var(--gallery-default-col-gap, 150px);
-    row-gap: var(--gallery-row-gap, 50px);
+    column-gap: var(--gallery-default-col-gap);
+    row-gap: var(--gallery-row-gap);
     justify-content: center;
 }
 
 .two-col{
-    column-gap: var(--gallery-two-col-gap, 250px);
+    column-gap: var(--gallery-two-col-gap);
     grid-template-columns: auto auto;
+}
+
+.two-col .game-entry{
+    width: var(--game-width-two);
 }
 
 .three-col{
     grid-template-columns: auto auto auto;
 }
 
-.game-entry{
-    width: 310px;
-}
-
-body {
-    background-color: antiquewhite;
+.three-col .game-entry{
+    width: var(--game-width-three);
 }
