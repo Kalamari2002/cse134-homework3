@@ -176,6 +176,7 @@ footer a{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
     .game-entry {
         margin-top: 10%;
@@ -243,7 +244,7 @@ footer a{
     .gallery-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        align-items: center;
     }
     .game-entry {
         margin-top: 10%;
@@ -326,6 +327,7 @@ footer a{
         column-gap: var(--gallery-default-col-gap);
         row-gap: var(--gallery-row-gap);
         justify-content: center;
+        align-items: normal;
     }
     
     .two-col{
@@ -420,6 +422,7 @@ footer a{
         column-gap: var(--gallery-default-col-gap);
         row-gap: var(--gallery-row-gap);
         justify-content: center;
+        align-items: normal;
     }
     
     .two-col{
