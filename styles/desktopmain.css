@@ -116,7 +116,8 @@ footer a{
     -border-color: aqua;
 }
 
-@media screen and (min-width: 400px){
+/*Phone*/
+@media screen and (max-width: 600px){
     nav {
         display: flex;
         background-color: var(--normal-font-color);
@@ -183,6 +184,169 @@ footer a{
     
 }
 
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    nav {
+        display: flex;
+        background-color: var(--normal-font-color);
+        font-size: 14px;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav li {
+        float:left;
+    }
+    
+    nav li a {
+        display: block;
+        padding: var(--nav-item-padding);
+        background-color: var(--normal-font-color);
+        color: var(--background-color);
+        text-decoration: none;
+    }
+    
+    nav li a:hover {
+        background-color: var(--background-color);
+        color: var(--normal-font-color);
+    }
+
+    .latest{
+        display: flex;
+        flex-direction: column;
+    }
+    .latest > iframe{
+        width: 400px;
+    }
+    .latest > p{
+        grid-area: caption;
+        font-size: var(--mobile-paragraph-font-size);
+        width: 35ch;
+    }
+
+    .introduction{
+        display: flex;
+        flex-direction: column;
+        margin: var(--default-gap);
+        gap: var(--default-gap);
+    }
+    .introduction > p{
+        font-family: var(--large-font-family),Helvetica;
+        font-size: var(--game-title-font-size);
+        width: var(--short-text-width);
+    }
+
+    .gallery-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .game-entry {
+        margin-top: 10%;
+        width: var(--game-width-three);
+    }
+}
+
+/*Tablet*/
+@media only screen and (min-width: 768px) {
+    nav {
+        display: flex;
+        background-color: var(--normal-font-color);
+        font-size: var(--paragraph-font-size);
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    nav li {
+        float:left;
+    }
+    
+    nav li a {
+        display: block;
+        padding: var(--nav-item-padding);
+        background-color: var(--normal-font-color);
+        color: var(--background-color);
+        text-decoration: none;
+    }
+    
+    nav li a:hover {
+        background-color: var(--background-color);
+        color: var(--normal-font-color);
+    }
+
+    .latest{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto 10% auto;
+        column-gap: var(--latest-col-gap);
+        grid-template-areas:
+        "title title"
+        "video date"
+        "video caption";
+    }
+    .latest > h2{
+        grid-area: title;
+    }
+    .latest .date{
+        grid-area: date;
+    }
+    .latest > iframe{
+        grid-area: video;
+        width: 500px;
+    }
+    .latest > p{
+        grid-area: caption;
+        font-size: var(--paragraph-font-size);
+        width: var(--medium-text-width);
+    }
+
+    .introduction{
+        display: flex;
+        flex-direction: row;
+        margin: var(--default-gap);
+        gap: var(--default-gap);
+    }
+    .introduction > p{
+        font-family: var(--large-font-family),Helvetica;
+        align-self: center;
+        font-size: var(--large-font-size);
+        width: var(--long-text-width);
+    }
+
+    .gallery-container {
+        display: grid;
+        column-gap: var(--gallery-default-col-gap);
+        row-gap: var(--gallery-row-gap);
+        justify-content: center;
+    }
+    
+    .two-col{
+        column-gap: var(--gallery-two-col-gap);
+        grid-template-columns: auto auto;
+    }
+    
+    .two-col .game-entry{
+        width: 240px;
+    }
+    
+    .three-col{
+        grid-template-columns: auto auto;
+    }
+
+    .three-col .game-entry{
+        width: var(--game-width-three);
+    }
+}
+
+/*Desktop*/
 @media screen and (min-width: 991px) {
     nav {
         display: flex;
