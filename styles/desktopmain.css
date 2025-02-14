@@ -112,11 +112,11 @@ footer a{
     margin-left: var(--default-gap);
     margin-right: var(--default-gap);
     margin-top: var(--segment-margin-top);
-    -border-style: solid;
-    -border-color: aqua;
+    border-style: solid; 
+    border-color: aqua;
 }
 
-/*Phone*/
+/*Smaller phones*/
 @media screen and (max-width: 600px){
     nav {
         display: flex;
@@ -251,7 +251,7 @@ footer a{
     }
 }
 
-/*Tablet*/
+/*Tablet, landscape*/
 @media only screen and (min-width: 768px) {
     nav {
         display: flex;
@@ -304,8 +304,8 @@ footer a{
     }
     .latest > p{
         grid-area: caption;
-        font-size: var(--paragraph-font-size);
-        width: var(--medium-text-width);
+        font-size: 22px;
+        width: 40ch;
     }
 
     .introduction{
@@ -329,12 +329,11 @@ footer a{
     }
     
     .two-col{
-        column-gap: var(--gallery-two-col-gap);
         grid-template-columns: auto auto;
     }
     
     .two-col .game-entry{
-        width: 240px;
+        width: var(--game-width-three);
     }
     
     .three-col{
@@ -347,7 +346,7 @@ footer a{
 }
 
 /*Desktop*/
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 1200px) {
     nav {
         display: flex;
         background-color: var(--normal-font-color);
