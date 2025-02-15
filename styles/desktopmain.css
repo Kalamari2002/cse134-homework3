@@ -147,29 +147,31 @@ footer a{
         color: var(--normal-font-color);
     }
 
-    .latest{
-        display: flex;
-        flex-direction: column;
-    }
-    .latest > iframe{
-        width: 400px;
-    }
-    .latest > p{
-        grid-area: caption;
-        font-size: var(--mobile-paragraph-font-size);
-        width: 35ch;
-    }
-
     .introduction{
         display: flex;
         flex-direction: column;
+        align-items: center;
         margin: var(--default-gap);
         gap: var(--default-gap);
     }
     .introduction > p{
         font-family: var(--large-font-family),Helvetica;
-        font-size: var(--game-title-font-size);
+        font-size: var(--mobile-paragraph-font-size);
         width: var(--short-text-width);
+    }
+
+    .latest{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .latest > iframe{
+        width: 350px;
+    }
+    .latest > p{
+        grid-area: caption;
+        font-size: var(--mobile-paragraph-font-size);
+        width: 30ch;
     }
 
     .gallery-container {
@@ -283,6 +285,19 @@ footer a{
         color: var(--normal-font-color);
     }
 
+    .introduction{
+        display: flex;
+        flex-direction: row;
+        margin: var(--default-gap);
+        gap: var(--default-gap);
+    }
+    .introduction > p{
+        font-family: var(--large-font-family),Helvetica;
+
+        font-size: var(--large-font-size);
+        width: var(--long-text-width);
+    }
+
     .latest{
         display: grid;
         grid-template-columns: auto auto;
@@ -309,21 +324,10 @@ footer a{
         width: 40ch;
     }
 
-    .introduction{
-        display: flex;
-        flex-direction: row;
-        margin: var(--default-gap);
-        gap: var(--default-gap);
-    }
-    .introduction > p{
-        font-family: var(--large-font-family),Helvetica;
-        align-self: center;
-        font-size: var(--large-font-size);
-        width: var(--long-text-width);
-    }
-
+    /*get parent?*/
     .gallery-container {
         display: grid;
+        -width: 300px;
         column-gap: var(--gallery-default-col-gap);
         row-gap: var(--gallery-row-gap);
         justify-content: center;
