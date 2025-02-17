@@ -37,22 +37,19 @@
     --landscape-gallery-row-gap:4dvh;
     --gallery-default-col-gap:10dvw;
     --gallery-landscape-col-gap:6dvw;
-    --latest-col-gap: 4dvw;
 
     --mobile-game-margin-top:10%;
-    --segment-margin-top:4%;
+    --item-margin-bottom: 4%;
+    --segment-margin-top:2%;
     --default-gap:2%;
 
     --page-title-font-size: 46px;
     --seg-title-font-size: 36px;
-    --large-font-size: 32px;
     --game-title-font-size:28px;
     --paragraph-font-size: 24px;
     --mobile-paragraph-font-size: 20px;
     --mobile-footer-font-size: 18px;
     --mobile-nav-font-size: 18px;
-
-    --thumbnail-width-long: 450px;
 
     --desktop-game-width: 500px;
     --mobile-game-width: 350px;
@@ -60,7 +57,7 @@
     --image-width-modifier: 0.9;
     --game-entry-padding-modifier: 0.05;
     
-    --long-text-width: 60ch;
+    --long-text-width: 75ch;
     --medium-text-width: 50ch;
     --latest-text-width: 30ch;
     --short-text-width: 25ch;
@@ -75,6 +72,12 @@
 @keyframes fade-in {
     from { opacity: 0;}
     to { opacity: 1; }
+}
+
+.introduction > p{
+    opacity: 0;
+    animation: fade-in var(--fade-in-default-time) forwards;
+    animation-delay: var(--introduction-animation-delay);
 }
 /*This makes sure that border and, most importantly, 
 padding are both included in the width/height of an element*/
@@ -125,27 +128,12 @@ footer a{
     text-decoration: none;
 }
 
-.segment{
+section{
     margin-left: var(--default-gap);
     margin-right: var(--default-gap);
     margin-top: var(--segment-margin-top);
 }
 
-.introduction > p{
-    opacity: 0;
-    animation: fade-in var(--fade-in-default-time) forwards;
-    animation-delay: var(--introduction-animation-delay);
-}
-
-.game-entry{
-    background-color: var(--game-entry-background-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.game-entry > a {
-    align-self: center;
-}
 
 /*Smaller phones*/
 @media screen and (max-width: 500px){
@@ -182,52 +170,23 @@ footer a{
         font-size: var(--mobile-footer-font-size);
     }
 
-    .introduction{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: var(--default-gap);
-        gap: var(--default-gap);
-    }
     .introduction > p{
-        font-family: var(--large-font-family),Helvetica;
-        font-size: var(--mobile-paragraph-font-size);
         width: var(--short-text-width);
-        padding-left: var(--default-gap);
-    }
+    }    
 
-    .latest{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .latest > iframe{
-        width: var(--mobile-game-width);
-    }
-
-    .latest > p{
-        grid-area: caption;
+    .experience-entry > ul li{
+        width: var(--short-text-width);
         font-size: var(--mobile-paragraph-font-size);
-        width: var(--latest-text-width);
+        margin-bottom: var(--item-margin-bottom);
     }
 
-    .gallery-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .interests p{
+        width: var(--short-text-width);
     }
 
-    .game-entry {
-        margin-top: var(--mobile-game-margin-top);
-        width: var(--mobile-game-width);
-        padding: calc(var(--mobile-game-width) * var(--game-entry-padding-modifier));
-    }
-    .game-entry > a picture img{
-        width: calc(var(--mobile-game-width) * var(--image-width-modifier));
-        height: calc(var(--mobile-game-width) * var(--image-width-modifier));
-    }
 }
 
+/*Intermediate*/
 @media screen and (min-width: 500px){
     nav {
         display: flex;
@@ -258,50 +217,24 @@ footer a{
         color: var(--normal-font-color);
     }
 
-    .introduction{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: var(--default-gap);
-        gap: var(--default-gap);
+    footer{
+        font-size: var(--mobile-footer-font-size);
     }
+
     .introduction > p{
-        font-family: var(--large-font-family),Helvetica;
-        font-size: var(--mobile-paragraph-font-size);
         width: var(--short-text-width);
-        padding-left: var(--default-gap);
-    }
+    }    
 
-    .latest{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .latest > iframe{
-        width: var(--mobile-game-width);
-    }
-
-    .latest > p{
-        grid-area: caption;
+    .experience-entry > ul li{
+        width: var(--short-text-width);
         font-size: var(--mobile-paragraph-font-size);
-        width: var(--latest-text-width);
+        margin-bottom: var(--item-margin-bottom);
     }
 
-    .gallery-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .interests p{
+        width: var(--short-text-width);
     }
 
-    .game-entry {
-        margin-top: var(--mobile-game-margin-top);
-        width: var(--mobile-game-width);
-        padding: calc(var(--mobile-game-width) * var(--game-entry-padding-modifier));
-    }
-    .game-entry > a picture img{
-        width: calc(var(--mobile-game-width) * var(--image-width-modifier));
-        height: calc(var(--mobile-game-width) * var(--image-width-modifier));
-    }
 }
 
 
@@ -338,79 +271,26 @@ footer a{
         color: var(--normal-font-color);
     }
 
-    
-    section:has(iframe){
-        padding-bottom: var(--segment-margin-top);
-    }
-
-    .introduction{
-        display: flex;
-        flex-direction: row;
-        margin: var(--default-gap);
-        gap: var(--default-gap);
-    }
     .introduction > p{
-        font-family: var(--large-font-family),Helvetica;
-        align-self: center;
-        font-size: var(--large-font-size);
         width: var(--long-text-width);
     }
 
-    .latest{
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto 5% auto;
-        column-gap: var(--latest-col-gap);
-        grid-template-areas:
-        "title date"
-        "video date"
-        "video caption";
+    .interests p{
+        width: var(--long-text-width);
     }
-    .latest > h2{
-        grid-area: title;
-    }
-    .latest > iframe{
-        grid-area: video;
-        width: var(--thumbnail-width-long);
-        justify-self: end;
-    }
-    .latest > p{
-        grid-area: caption;
+
+    .experience-entry > ul li{
+        width: var(--medium-text-width);
         font-size: var(--paragraph-font-size);
-        width: var(--latest-text-width);
-        align-self: start;
-    }
-    .latest .date{
-        grid-area: date;
-        align-self: end;
-    }
-
-    .gallery-container {
-        display: grid;
-        column-gap: var(--gallery-landscape-col-gap);
-        row-gap: var(--landscape-gallery-row-gap);
-    }
-    
-    .two-col{
-        column-gap: var(--gallery-landscape-col-gap);
-        grid-template-columns: auto auto;
-    }
-    
-    .three-col{
-        grid-template-columns: auto auto auto;
-    }
-
-    .game-entry{
-        width: var(--desktop-game-width);
-        padding: calc(var(--desktop-game-width) * var(--game-entry-padding-modifier));
-    }
-    .game-entry > a picture img{
-        width: calc(var(--desktop-game-width) * var(--image-width-modifier));
+        margin-bottom: var(--default-gap);
     }
 }
 
 /*Desktop*/
 @media screen and (min-width: 1300px) {
+    ul{
+        font-size: var(--paragraph-font-size);
+    }
     nav {
         display: flex;
         background-color: var(--normal-font-color);
@@ -442,80 +322,14 @@ footer a{
         color: var(--normal-font-color);
     }
 
-    section:has(iframe){
-        padding-bottom: var(--segment-margin-top);
-    }
-
-    .introduction{
-        display: flex;
-        flex-direction: row;
-        margin: var(--default-gap);
-        gap: var(--default-gap);
-    }
     .introduction > p{
-        font-family: var(--large-font-family),Helvetica;
-        align-self: center;
-        font-size: var(--large-font-size);
+        width: var(--long-text-width);
+    }    
+
+    .experience-entry > ul li{
         width: var(--long-text-width);
     }
-
-    .latest{
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: auto 10% auto;
-        column-gap: var(--latest-col-gap);
-        grid-template-areas:
-        "title date"
-        "video date"
-        "video caption";
-    }
-    .latest > h2{
-        grid-area: title;
-    }
-    .latest > iframe{
-        grid-area: video;
-        width: var(--thumbnail-width-long);
-        justify-self: end;
-    }
-    .latest > p{
-        grid-area: caption;
-        font-size: var(--paragraph-font-size);
-        width: var(--medium-text-width);
-    }
-    .latest .date{
-        align-self: end;
-        grid-area: date;
-    }
-
-    .gallery-container {
-        display: grid;
-        justify-content: center;
-        column-gap: var(--gallery-default-col-gap);
-        row-gap: var(--landscape-gallery-row-gap);
-    }
-    
-    .two-col{
-        column-gap: var(--gallery-default-col-gap);
-        grid-template-columns: auto auto;
-    }
-    
-    .three-col{
-        grid-template-columns: auto auto auto;
-    }
-
-    .game-entry{
-        width: var(--desktop-game-width);
-        padding: calc(var(--desktop-game-width) * var(--game-entry-padding-modifier));
-        transform: scale(1,1);
-        transition: transform var(--quick-transition-time);
-    }
-    .game-entry:hover{
-        transform: scale(var(--zoomin-scale),var(--zoomin-scale));
-    }
-    .game-entry > a picture img{
-        width: calc(var(--desktop-game-width) * var(--image-width-modifier));
-        height: calc((var(--desktop-game-width) * var(--image-width-modifier))/1.8);
+    .interests p{
+        width: var(--long-text-width);
     }
 }
-
-
