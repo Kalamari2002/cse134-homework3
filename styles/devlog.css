@@ -235,8 +235,9 @@ footer a{
         width: var(--short-text-width);
     }
 
-    .devlog-entry > details{
-        font-size: var(--mobile-paragraph-font-size);
+    .devlog-entry > details p{
+        font-size: var(--mobile-paragraph-font);
+        width: var(--mobile-text-width);
     }
 
     .devlog-entry > table{
