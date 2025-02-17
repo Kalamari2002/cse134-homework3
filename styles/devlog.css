@@ -68,6 +68,7 @@
     --image-width-modifier: 0.9;
     --game-entry-padding-modifier: 0.05;
     
+    --entry-text-width: 80ch;
     --long-text-width: 70ch;
     --medium-text-width: 50ch;
     --latest-text-width: 30ch;
@@ -479,7 +480,7 @@ footer a{
 
     }
     aside p{
-        width: var(--medium-text-width);
+        width: var(--entry-text-width);
     }
     .introduction{
         margin: var(--default-gap);
@@ -492,7 +493,7 @@ footer a{
 
     .devlog-entry > p {
         width: 80ch;
-        width: var(--long-text-width);
+        width: var(--entry-text-width);
     }
 
     .devlog-entry > ol{
